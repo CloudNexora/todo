@@ -19,10 +19,15 @@ pipeline {
             }
         }
 
-        stage("Build") {
+        stage('Install Dependencies') {
             steps {
-                sh 'echo "Building the project..."'
-                sh 'node app.js'
+                sh 'npm install'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'npm test'
             }
         }
     }
