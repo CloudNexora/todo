@@ -5,6 +5,12 @@ pipeline {
         nodejs 'node26'
     }
 
+    environment {
+        AWS_REGION = 'ap-south-1'
+        ECR_REPO = '739754704384.dkr.ecr.ap-south-1.amazonaws.com/aws/demo'
+        IMAGE_TAG = 'v2'
+    }
+
     stages {
         stage("Clone Repository") {
             steps {
@@ -25,7 +31,7 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+        stage('Docker Build') {
             steps {
                 sh 'npm test'
             }

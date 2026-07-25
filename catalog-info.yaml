@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: todo-app
+  description: An example of todo application
+  # Example for optional annotations
+  annotations:
+    github.com/project-slug: CloudNexora/todo
+  #	backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
+
